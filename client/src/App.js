@@ -8,8 +8,13 @@ import Login from "./pages/Login";
 import DragNDrop from "./components/DragNDrop";
 
 const data = [
+  { title: "Sunday", items: ["A", "B"] },
   { title: "Monday", items: ["1", "2", "3"] },
   { title: "Tuesday", items: ["4", "5"] },
+  { title: "Wednesday", items: ["C", "D"] },
+  { title: "Thursday", items: ["E", "F"] },
+  { title: "Friday", items: ["G", "H"] },
+  { title: "Saturday", items: ["I", "J"] },
 ];
 
 function App() {
