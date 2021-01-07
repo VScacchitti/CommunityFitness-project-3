@@ -1,6 +1,17 @@
 import React, { useState, useRef } from "react";
+import Container from "./Container";
 
-function DragNDrop({ data }) {
+function DragNDrop() {
+  const data = [
+    { title: "Sunday", items: ["A", "B"] },
+    { title: "Monday", items: ["1", "2", "3"] },
+    { title: "Tuesday", items: ["4", "5"] },
+    { title: "Wednesday", items: ["C", "D"] },
+    { title: "Thursday", items: ["E", "F"] },
+    { title: "Friday", items: ["G", "H"] },
+    { title: "Saturday", items: ["I", "J"] },
+  ];
+
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
 
@@ -68,43 +79,60 @@ function DragNDrop({ data }) {
     return "dnd-item";
   };
 
-  return (
+  const handleAdd = () => {
+    console.log("Adding an item");
+    setList([...list, { title: "Newday", items: ["New"] },]);
+  };
 
-    <div className="drag-n-drop">
-      {list.map((group, gIndex) => (
-        <div 
-          key={group.title} 
-          className="dnd-day"
-          //for dragging over empty column:
-          //if we are dragging and positive number of items in a group. 0 would be false.
-          //then we want to handleDragEnter
-          //we don't have an item in this case so we can set default of item Index to 0.
-          onDragEnter={dragging && !group.items.length ? (e) => handleDragEnter(e, {gIndex, iIndex: 0}) : null}
-        >
-          <div className="dnd-day-title">{group.title}</div>
-          {group.items.map((item, iIndex) => (
-            <div
-              draggable
-              onDragStart={(e) => {
-                handleDragStart(e, { gIndex, iIndex });
-              }}
-              onDragEnter={
-                dragging
-                  ? (e) => {
-                      handleDragEnter(e, { gIndex, iIndex });
-                    }
-                  : null
-              }
-              //can't use onDragEnd bc unpredicted behavior and could break things
-              key={item}
-              className={dragging ? getStyles({ gIndex, iIndex }) : "dnd-item"}
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
+  return (
+    <Container>
+      <div className="add-to-calendar">
+        <button onClick={handleAdd}>
+          <i className="fas fa-plus"></i>
+        </button>
+      </div>
+      <div className="drag-n-drop">
+        {list.map((group, gIndex) => (
+          <div
+            key={group.title}
+            className="dnd-day"
+            //for dragging over empty column:
+            //if we are dragging and positive number of items in a group. 0 would be false.
+            //then we want to handleDragEnter
+            //we don't have an item in this case so we can set default of item Index to 0.
+            onDragEnter={
+              dragging && !group.items.length
+                ? (e) => handleDragEnter(e, { gIndex, iIndex: 0 })
+                : null
+            }
+          >
+            <div className="dnd-day-title">{group.title}</div>
+            {group.items.map((item, iIndex) => (
+              <div
+                draggable
+                onDragStart={(e) => {
+                  handleDragStart(e, { gIndex, iIndex });
+                }}
+                onDragEnter={
+                  dragging
+                    ? (e) => {
+                        handleDragEnter(e, { gIndex, iIndex });
+                      }
+                    : null
+                }
+                //can't use onDragEnd bc unpredicted behavior and could break things
+                key={item}
+                className={
+                  dragging ? getStyles({ gIndex, iIndex }) : "dnd-item"
+                }
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </Container>
   );
 }
 

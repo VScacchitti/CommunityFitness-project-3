@@ -80,6 +80,7 @@ header .logo {
   max-height: 75px;
   border-radius: 15px;
   transition: background 1s ease-out;
+  cursor: pointer;
 }
 .buttons button:hover,
 .buttons button:active {
@@ -185,4 +186,27 @@ header .logo {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+.add-to-calendar {
+  justify-content: flex-start;
+  margin: 20px;
+}
+.add-to-calendar button {
+  background: linear-gradient(to right, #99fda2, #016696);
+  border: none;
+  width: 10vw;
+  max-width: 50px;
+  height: 10vw;
+  max-height: 50px;
+  border-radius: 15px;
+  transition: background 1s ease-out;
+  cursor: pointer;
+}
+.add-to-calendar button:hover,
+.add-to-calendar button:active {
+  background: #99fda2;
+}
+.add-to-calendar i {
+  font-size: 1.6rem;
+  color: #010014;
 }
