@@ -75,7 +75,9 @@ header .logo {
   background: linear-gradient(to right, #99fda2, #016696);
   border: none;
   width: 20vw;
+  max-width: 75px;
   height: 20vw;
+  max-height: 75px;
   border-radius: 15px;
   transition: background 1s ease-out;
 }
@@ -131,4 +133,45 @@ header .logo {
 .login-form #login:hover,
 .login-form #login:active {
   background: #99fda2;
+}
+
+/* dragndrop */
+.drag-n-drop {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  grid-template-columns: repeat(auto-fill, 300px);
+  color: white;
+  align-items: start;
+}
+.dnd-day {
+  background-color: #464c58;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+.dnd-day-title {
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+.dnd-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #282c34;
+  min-height: 150px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.dnd-item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+.dnd-item * {
+  margin: 0;
+}
+/* .current when dragging */
+.current {
+  background-color: #282c34;
 }
