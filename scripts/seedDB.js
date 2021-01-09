@@ -36,10 +36,7 @@ const recordSeed = [
     process.exit(1);
   });
 
-  mongoose.connect(
-    process.env.MONGODB_URI ||
-    "mongodb://localhost/communityfitnessbackup"
-  );
+
 
 const exerciseSeed = [
   {
@@ -546,10 +543,6 @@ db2.Exercise
     process.exit(1);
   });
 
-  mongoose.connect(
-    process.env.MONGODB_URI ||
-    "mongodb://localhost/communityfitnessbackup"
-  );
 
   let workoutSeed = [
     {
