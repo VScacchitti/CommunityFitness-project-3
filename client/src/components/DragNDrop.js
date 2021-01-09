@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Container from "./Container";
+import recordsAPI from "../utils/record/API";
 
 function DragNDrop() {
   const data = [
@@ -14,9 +15,14 @@ function DragNDrop() {
 
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
+  const [hide, setHide] = useState(true);
 
   const dragItem = useRef();
   const dragNode = useRef();
+
+  useEffect(() => {
+
+  },[]);
 
   const handleDragStart = (e, params) => {
     //params are gIndex and iIndex
@@ -80,8 +86,21 @@ function DragNDrop() {
   };
 
   const handleAdd = () => {
+    setHide(!hide);
+  }
+  // click the add button
+  const handleAddWorkout = () => {
+    recordsAPI.getRecord()
+    .then(results => {
+      console.log(results.data);
+      list[0].items.push(results.data[0].name);
+      console.log(list[0].items);
+
+      setList([...list]);
+    })
+    .catch(err => console.log(err));
+
     console.log("Adding an item");
-    setList([...list, { title: "Newday", items: ["New"] },]);
   };
 
   return (
@@ -131,6 +150,14 @@ function DragNDrop() {
             ))}
           </div>
         ))}
+      </div>
+      <div className={ hide ? "popup hide" : "popup"}>
+        <div>
+          <h1>Hello</h1>
+          <div>
+            <button onClick={handleAddWorkout}>Add workout</button>
+          </div>
+        </div>
       </div>
     </Container>
   );
