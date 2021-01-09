@@ -1,4 +1,4 @@
-const db = require("../../Desktop/P3bu/models/workout");
+const db = require("../models/workout");
 
 // Defining methods for the booksController
 module.exports = {
