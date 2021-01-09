@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require ("mongoose");
+const routes= require ("./routes");
 
 
 const PORT = process.env.PORT || 3001;
@@ -15,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-
+app.use(routes)
 
 //Connet to mongoose
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/communityfitness";
