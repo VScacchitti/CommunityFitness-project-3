@@ -7,7 +7,7 @@ const db3 = require("../models/workout");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/communityfitnessbackup"
+  "mongodb://localhost/communityfitness"
 );
 
 const recordSeed = [
@@ -35,8 +35,6 @@ const recordSeed = [
     console.error(err);
     process.exit(1);
   });
-
-
 
 const exerciseSeed = [
   {

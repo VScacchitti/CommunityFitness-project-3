@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Container from "./Container";
 
 function DragNDrop() {
@@ -17,6 +17,10 @@ function DragNDrop() {
 
   const dragItem = useRef();
   const dragNode = useRef();
+
+  useEffect(() => {
+
+  },[]);
 
   const handleDragStart = (e, params) => {
     //params are gIndex and iIndex
@@ -81,7 +85,9 @@ function DragNDrop() {
 
   const handleAdd = () => {
     console.log("Adding an item");
-    setList([...list, { title: "Newday", items: ["New"] },]);
+    
+    list[0].items.push("new");
+    setList([...list]);
   };
 
   return (
