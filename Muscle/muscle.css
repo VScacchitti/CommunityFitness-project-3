@@ -1,0 +1,30 @@
+
+#main {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    border: solid 5px red;
+}
+#myList{
+    background: #ccc;
+    position: absolute;
+    top:110px;
+}
+#myList span{
+    cursor: pointer;
+}
+#myList img{
+    display: none;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -110px;
+    left: 10px;
+    border: solid 5px red;
+}
+#myList li:hover{
+    background: #888;
+}
+#myList li:hover img{
+    display:block;
+}

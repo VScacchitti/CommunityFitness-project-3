@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="muscle.css">
+<title>Change Image on Hover in CSS</title>
+<style>
+    .muscle {
+        width: 30px;
+        height: 50px;
+        position: relative;
+        display: inline-block;
+        margin: 50px;
+    }
+    .muscle .img-top {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+    .muscle:hover .img-top {
+        display: inline;
+    }
+</style>
+
+
+</head>
+<body>
+    
+    <img id="main" src="/Images/Muscle Back/Muscle man BACK BW.jpg" />
+    <ul id="myList">
+        <li>
+            <span>Calfs</span>
+            <img src="/Images/Muscle Back/Calf Muscles.jpg" />
+        </li>
+        <li><span>Deltoids</span>
+            <img src="/Images/Muscle Back/Deltoid.jpg" />
+        </li>
+        <li>
+            <span>Gluteus Max</span>
+            <img src="/Images/Muscle Back/Gluteus Max.jpg" />
+        </li>
+        <li><span>Gluteus Med</span>
+            <img src="/Images/Muscle Back/Gluteus Med.jpg" />
+        </li>
+        <li><span>Hamstrings</span>
+                <img src="/Images/Muscle Back/Hamstrings.jpg" />
+        </li>
+        <li><span>Latissimus</span>
+            <img src="/Images/Muscle Back/Latissimus.jpg" />
+        </li>
+        <li><span>Teres Major</span>
+            <img src="/Images/Muscle Back/Teres Major.jpg" />
+        </li>
+        <li><span>Trapezius</span>
+            <img src="/Images/Muscle Back/Trapezius.jpg" />
+        </li>
+        <li><span>Triceps</span>
+            <img src="/Images/Muscle Back/Triceps.jpg" />
+        </li>
+    </ul>

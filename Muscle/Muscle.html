@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="muscle.css">
+<title>Change Image on Hover in CSS</title>
+<style>
+    .muscle {
+        width: 30px;
+        height: 50px;
+        position: relative;
+        display: inline-block;
+        margin: 50px;
+    }
+    .muscle .img-top {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+    .muscle:hover .img-top {
+        display: inline;
+    }
+</style>
+
+
+</head>
+<body>
+    
+    <img id="main" src="/Images/Muscle Front/Muscle man BW.jpg" />
+    <ul id="myList">
+    <li>
+        <span>Arms</span>
+        <img src="/Images/Muscle Front/Arms.jpg" />
+    </li>
+    <li><span>Chest</span>
+        <img src="/Images/Muscle Front/Chest.jpg" />
+    </li>
+    <li>
+        <span>Core</span>
+        <img src="/Images/Muscle Front/Core.jpg" />
+    </li>
+    <li><span>Legs</span>
+        <img src="/Images/Muscle Front/Legs.jpg" />
+    </li>
+    <li><span>Shoulders</span>
+            <img src="/Images/Muscle Front/Shoulders.jpg" />
+    </li>
+</ul>
+
+</body>
+</html>
