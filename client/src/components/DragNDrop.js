@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Container from "./Container";
 import recordsAPI from "../utils/record/API";
+import exerciseAPI from "../utils/exercise/API";
+// import workoutAPI from "../utils/workout/API";
 
 function DragNDrop() {
   const data = [
@@ -16,12 +18,19 @@ function DragNDrop() {
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
   const [hide, setHide] = useState(true);
+  const [exercises, setExercies] = useState([]);
+  // const [workouts, setWorkouts] = useState([]);
 
   const dragItem = useRef();
   const dragNode = useRef();
 
   useEffect(() => {
-
+    exerciseAPI.getExercise()
+    .then(res => {
+      console.log(res.data);
+      setExercies(res.data);
+    })
+    .catch(err => console.log(err));
   },[]);
 
   const handleDragStart = (e, params) => {
@@ -103,6 +112,12 @@ function DragNDrop() {
     console.log("Adding an item");
   };
 
+  const handleAddExercise = (name) => {
+    console.log(name);
+    list[0].items.push(name);
+    setList([...list]);
+  };
+
   return (
     <Container>
       <div className="add-to-calendar">
@@ -153,7 +168,14 @@ function DragNDrop() {
       </div>
       <div className={ hide ? "popup hide" : "popup"}>
         <div>
-          <h1>Hello</h1>
+          <h1>Select a Workout</h1>
+          <div className="ex-list">
+            {exercises.map((exercise) => (
+              <div key={exercise.id} className="ex-item" name={exercise._id} onClick={() => handleAddExercise(exercise.name)}>
+                {exercise.name}
+              </div>
+            ))}
+          </div>
           <div>
             <button onClick={handleAddWorkout}>Add workout</button>
           </div>
