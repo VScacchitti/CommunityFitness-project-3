@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Container from "./Container";
 import recordsAPI from "../utils/record/API";
 import exerciseAPI from "../utils/exercise/API";
-// import workoutAPI from "../utils/workout/API";
+import workoutAPI from "../utils/workout/API";
 
 function DragNDrop() {
   const data = [
@@ -19,16 +19,16 @@ function DragNDrop() {
   const [dragging, setDragging] = useState(false);
   const [hide, setHide] = useState(true);
   const [exercises, setExercies] = useState([]);
-  // const [workouts, setWorkouts] = useState([]);
+  const [workouts, setWorkouts] = useState([]);
 
   const dragItem = useRef();
   const dragNode = useRef();
 
   useEffect(() => {
-    exerciseAPI.getExercise()
+    workoutAPI.getWorkout()
     .then(res => {
       console.log(res.data);
-      setExercies(res.data);
+      setWorkouts(res.data);
     })
     .catch(err => console.log(err));
   },[]);
@@ -99,7 +99,7 @@ function DragNDrop() {
   }
   // click the add button
   const handleAddWorkout = () => {
-    recordsAPI.getRecord()
+    workoutAPI.getWorkout()
     .then(results => {
       console.log(results.data);
       list[0].items.push(results.data[0].name);
@@ -170,9 +170,9 @@ function DragNDrop() {
         <div>
           <h1>Select a Workout</h1>
           <div className="ex-list">
-            {exercises.map((exercise) => (
-              <div key={exercise.id} className="ex-item" name={exercise._id} onClick={() => handleAddExercise(exercise.name)}>
-                {exercise.bodypart}: {exercise.name}
+            {workouts.map((workout) => (
+              <div key={workout.id} className="ex-item" name={workout._id} onClick={() => handleAddExercise(workout.name)}>
+                {workout.name}: {workout.description}
               </div>
             ))}
           </div>

@@ -4,129 +4,27 @@ const db = require("../models/workout");
 
   mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb://localhost/communityfitnessbackup"
+    "mongodb://localhost/communityfitness"
   );
 
   let workoutSeed = [
     {
       day: new Date().setDate(new Date().getDate()-10),
-      exercises: [
-        {
-          type: "strength",
-          name: "Bicep Curl",
-          duration: 20,
-          weight: 100,
-          reps: 10,
-          sets: 4
-        }
-      ]
+      name: "Mayhem Monday",
+      description: "Strength- Front Squat 10 x 3 (185lbs), Back Squat 5x3 (235lbs), Conditioning The Mandolorian -12 Burpee-CHest to Bar PullUp 240 single-unders 10 Burpee C to B 200 single-unders 8 burpee C to B 160 single-unders -Rest 5:00- 15 Overhead Squats (95) 30 Weighted Sit Ups 12 Overhead Squats (95) 24 Weighted SIt Ups 9 Overhead Squats (95) 18 Weighted Sit Ups -Rest 5:00- 20 Burpee Pull-Ups 400 single-unders 20 Overhead Squats (95) 40 Weighted Sit Ups",
+      notes: "Completed Mandolorian in 19:02" 
     },
     {
       day: new Date().setDate(new Date().getDate()-9),
-      exercises: [
-        {
-          type: "strength",
-          name: "Lateral Pull",
-          duration: 20,
-          weight: 300,
-          reps: 10,
-          sets: 4
-        }
-      ]
+      name: "Chest and Triceps",
+      description: "Flat Bench Press 3 x 10 (225) Incline Dumbbell Bench Press 4x8(55) Tricep Pull Down 4x15(50), 3 x Max Push -Ups (rest 2min between rounds)",
+      notes: "Completed Mandolorian in 19:02"
+    
     },
-    {
-      day: new Date().setDate(new Date().getDate()-8),
-      exercises: [
-        {
-          type: "strength",
-          name: "Push Press",
-          duration: 25,
-          weight: 185,
-          reps: 8,
-          sets: 4
-        }
-      ]
-    },
-    {
-      day: new Date().setDate(new Date().getDate()-7),
-      exercises: [
-        {
-          type: "cardio",
-          name: "Running",
-          duration: 25,
-          distance: 4
-        }
-      ]
-    },
-    {
-      day: new Date().setDate(new Date().getDate()-6),
-      exercises: [
-        {
-          type: "strength",
-          name: "Bench Press",
-          duration: 20,
-          weight: 285,
-          reps: 10,
-          sets: 4
-        }
-      ]
-    },
-    {
-      day: new Date().setDate(new Date().getDate()-5),
-      exercises: [
-        {
-          type: "strength",
-          name: "Bench Press",
-          duration: 20,
-          weight: 300,
-          reps: 10,
-          sets: 4
-        }
-      ]
-    },
-    {
-      day: new Date(new Date().setDate(new Date().getDate() - 4)),
-      exercises: [
-        {
-          type: "strength",
-          name: "Quad Press",
-          duration: 30,
-          weight: 300,
-          reps: 10,
-          sets: 4
-        }
-      ]
-    },
-    {
-      day: new Date(new Date().setDate(new Date().getDate() - 3)),
-      exercises: [
-        {
-          type: "strength",
-          name: "Bench Press",
-          duration: 20,
-          weight: 300,
-          reps: 10,
-          sets: 4
-        }
-      ]
-    },
-    {
-      day: new Date(new Date().setDate(new Date().getDate() - 2)),
-      exercises: [
-        {
-          type: "strength",
-          name: "Military Press",
-          duration: 20,
-          weight: 300,
-          reps: 10,
-          sets: 4
-        }
-      ]
-    }
   ];
   
   db.Workout.deleteMany({})
-    .then(() => db3.Workout.collection.insertMany(workoutSeed))
+    .then(() => db.Workout.collection.insertMany(workoutSeed))
     .then(data => {
       console.log(data.result.n + " records inserted!");
       process.exit(0);
