@@ -239,3 +239,19 @@ header .logo {
   width: 250px;
   border-radius: 5px;
 }
+
+.container-man {
+  display: flex;
+}
+.man-front {
+  position: relative;
+}
+.man-f-inner {
+  position: absolute;
+  top:0;
+  left:0;
+}
+.muscle-options li {
+  cursor: pointer;
+  z-index: -1;
+}
