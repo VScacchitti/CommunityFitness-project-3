@@ -11,6 +11,9 @@ router.route("/:id")
   .get(workoutController.findById)
   .put(workoutController.update)
   .delete(workoutController.remove);
+//Gets Workout by Name
+  router.route("/:name")
+  .get(workoutController.findByName)
 
 
 module.exports = router;
