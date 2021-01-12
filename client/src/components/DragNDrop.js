@@ -6,7 +6,7 @@ import exerciseAPI from "../utils/exercise/API";
 
 function DragNDrop() {
   const data = [
-    { title: "Sunday", items: ["A", "B"] },
+    { title: "Sunday", items: [] },
     { title: "Monday", items: ["1", "2", "3"] },
     { title: "Tuesday", items: ["4", "5"] },
     { title: "Wednesday", items: ["C", "D"] },
@@ -172,7 +172,7 @@ function DragNDrop() {
           <div className="ex-list">
             {exercises.map((exercise) => (
               <div key={exercise.id} className="ex-item" name={exercise._id} onClick={() => handleAddExercise(exercise.name)}>
-                {exercise.name}
+                {exercise.bodypart}: {exercise.name}
               </div>
             ))}
           </div>
