@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import DragNDrop from "./components/DragNDrop";
+import WorkoutForm from "./components/WorkoutForm"
 
 // const data = [
 //   { title: "Sunday", items: ["A", "B"] },
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route exact path={"/plan"}>
           <DragNDrop />
+        </Route>
+        <Route exact path={"/workout"}>
+          <WorkoutForm />
         </Route>
       </Switch>
     </Router>
