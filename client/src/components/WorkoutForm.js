@@ -29,10 +29,8 @@ class WorkoutForm extends Component {
             notes: event.target.value
         });
       }
- // Function to reset state after form submit
-  resetState = () => {
-      this.setState({name:"",description:"",notes:""})
-  }
+
+  
     //function to handle form submit
     handleFormSubmit = event => {
         event.preventDefault();
@@ -43,10 +41,11 @@ class WorkoutForm extends Component {
         }
         workoutAPI.saveWorkout(savedWorkout)
         .then(console.log(savedWorkout))
-        .then(this.resetState())
-        .catch(err => console.log(err));
-        
+        .then(alert("You added the following workout:" + savedWorkout.name))
+        .catch(err => console.log(err));   
     }
+
+
   render(){
     return (
         <div className="signup-form">
@@ -61,7 +60,7 @@ class WorkoutForm extends Component {
       )
 
   }
-   
+
 }
 
 export default WorkoutForm;
