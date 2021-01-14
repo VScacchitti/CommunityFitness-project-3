@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const measurementSchema = new Schema({
   
-      _id: new mongoose.Types.ObjectId(),
       neck: {
         type: Number,
       },
