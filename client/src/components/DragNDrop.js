@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Container from "./Container";
-import recordsAPI from "../utils/record/API";
-import exerciseAPI from "../utils/exercise/API";
+// import recordsAPI from "../utils/record/API";
+// import exerciseAPI from "../utils/exercise/API";
 import workoutAPI from "../utils/workout/API";
 
 function DragNDrop() {
@@ -18,7 +18,7 @@ function DragNDrop() {
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
   const [hide, setHide] = useState(true);
-  const [exercises, setExercies] = useState([]);
+  // const [exercises, setExercies] = useState([]);
   const [workouts, setWorkouts] = useState([]);
 
   const dragItem = useRef();
