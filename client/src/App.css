@@ -95,8 +95,15 @@ header .logo {
 }
 
 /* SIGNUP */
+.login-form form {
+  margin-top: 5rem;
+}
+.signup-form form {
+  margin-top: 7rem;
+}
 .signup-form,
-.login-form {
+.login-form,
+.workout-form {
   display: flex;
   position: absolute;
   top: 45%;
@@ -110,20 +117,23 @@ header .logo {
   margin: auto;
 }
 .signup-form input,
-.login-form input {
+.login-form input,
+.workout-form input {
   display: block;
   position: relative;
   margin-bottom: 5px;
-  line-height: 2rem;
+  line-height: 1.2rem;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.9);
   font-weight:bold;
+  width: 160px;
 }
 .signup-form #signup,
-.login-form #login {
+.login-form #login,
+#workoutSubmit {
   padding: 10px;
   font-size: 1rem;
   font-weight: bold;
@@ -135,8 +145,34 @@ header .logo {
 .signup-form #signup:hover,
 .signup-form #signup:active,
 .login-form #login:hover,
-.login-form #login:active {
+.login-form #login:active,
+#workoutSubmit:hover,
+#workoutSubmit:active {
   background: #99fda2;
+}
+.workout-form {
+  margin-top: 3rem;
+}
+.workout-form h2 {
+  color:  #99fda2;
+  margin: 3.2rem auto;
+  font-size: 22px;
+}
+.workout-form form {
+  display: flex;
+  flex-direction: column;
+}
+.workout-form textarea {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 600;
+  font-family: Arial;
+  background: rgba(255, 255, 255, 0.9);
+  width: 160px;
+  height: 100px;
+  margin-bottom: 5px;
 }
 
 /* dragndrop */

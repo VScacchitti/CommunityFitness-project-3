@@ -7,7 +7,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Man from "./pages/Man";
 import DragNDrop from "./components/DragNDrop";
-import WorkoutForm from "./components/WorkoutForm";
+import Workout from "./pages/Workout";
+import Users from "./pages/Users";
 
 function App() {
   return (
@@ -27,10 +28,13 @@ function App() {
           <DragNDrop />
         </Route>
         <Route exact path={"/workout"}>
-          <WorkoutForm />
+          <Workout />
         </Route>
         <Route exact path={"/man"}>
           <Man />
+        </Route>
+        <Route exact path={"/users"}>
+          <Users />
         </Route>
       </Switch>
     </Router>

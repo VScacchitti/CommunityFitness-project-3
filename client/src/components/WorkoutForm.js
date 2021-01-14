@@ -48,14 +48,14 @@ class WorkoutForm extends Component {
 
   render(){
     return (
-        <div className="signup-form">
+        <div className="workout-form">
             <h2>Create a Workout</h2>
           <form >
-            <input value={this.state.value} type="text" placeholder="Name" onChange={this.handleChangeName} />
+            <input value={this.state.value} type="text" placeholder="Workout Name" onChange={this.handleChangeName} />
             <textarea value={this.state.value} type="input" placeholder="Workout Description" onChange={this.handleChangeDescriptiom} />
             <textarea value={this.state.value} type="input" placeholder="Workout Notes" onChange={this.handleChangeNotes} />
           </form>
-          <button type="submit" id="workoutSubmit" onClick={this.handleFormSubmit}>Add Your Workout!</button>
+          <button type="submit" id="workoutSubmit" onClick={this.handleFormSubmit}>Add Workout!</button>
         </div>
       )
 
