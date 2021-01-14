@@ -7,7 +7,7 @@
 body {
   background: #010014;
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .container {
   position: relative;
@@ -17,20 +17,27 @@ header {
   position: relative;
   justify-content: flex-end;
   align-items: center;
-  height: 13vh;
-  /* background: linear-gradient(to right, #99fda2, #02ccff, #010014); */
+  height: 100px;
+  font-family: "Expletus Sans", cursive;
 }
 header::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
-  background: linear-gradient(to left, #010014, #02ccff, #99fda2, #02ccff, #010014);
+  background: linear-gradient(
+    to left,
+    #010014,
+    #02ccff,
+    #99fda2,
+    #02ccff,
+    #010014
+  );
   height: 3px;
   width: 100%;
 }
 header .logo {
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 10px;
   background: linear-gradient(to right, #99fda2, #02ccff);
   background-clip: text;
@@ -64,7 +71,7 @@ header .logo {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-box-reflect: below 1px linear-gradient(transparent,#0005);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 .logo-image i {
   font-size: 10rem;
@@ -108,7 +115,7 @@ header .logo {
   position: absolute;
   top: 45%;
   left: 50%;
-  transform: translate( -50%, -50%);
+  transform: translate(-50%, -50%);
   flex-direction: column;
   width: 80%;
   /* height: 40vh; */
@@ -128,7 +135,7 @@ header .logo {
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.9);
-  font-weight:bold;
+  font-weight: bold;
   width: 160px;
 }
 .signup-form #signup,
@@ -154,7 +161,7 @@ header .logo {
   margin-top: 3rem;
 }
 .workout-form h2 {
-  color:  #99fda2;
+  color: #99fda2;
   margin: 3.2rem auto;
   font-size: 22px;
 }
@@ -194,7 +201,7 @@ header .logo {
 }
 .dnd-day-title {
   font-size: 1.2rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .dnd-item {
   display: flex;
@@ -252,7 +259,7 @@ header .logo {
 
 .popup {
   position: absolute;
-  top:0;
+  top: 0;
   left: 20%;
   width: 60vw;
   padding: 20px 30px;
@@ -294,8 +301,8 @@ header .logo {
 .man-f-inner,
 .man-b-inner {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
 }
 .man-f-inner img,
 .man-b-inner img {
@@ -310,4 +317,10 @@ header .logo {
   z-index: -1;
   text-decoration: none;
   list-style: none;
+}
+
+@media screen and (max-width: 375px) {
+  header .logo {
+    font-size: 2rem;
+  }
 }
