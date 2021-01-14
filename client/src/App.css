@@ -278,6 +278,8 @@ header .logo {
 
 .container-man {
   display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
 }
 .man-front,
 .man-back {
@@ -299,7 +301,13 @@ header .logo {
 .man-b-inner img {
   width: 300px;
 }
+.muscle-options {
+  margin: 10px;
+  color: #3dd7fd;
+}
 .muscle-options li {
   cursor: pointer;
   z-index: -1;
+  text-decoration: none;
+  list-style: none;
 }
