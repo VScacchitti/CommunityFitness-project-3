@@ -7,7 +7,7 @@ const db = require("../models/record");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/communityfitnessbackup"
+  "mongodb://localhost/communityfitness"
 );
 
 const recordSeed = [
