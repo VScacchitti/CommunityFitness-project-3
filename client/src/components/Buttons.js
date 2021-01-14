@@ -14,6 +14,11 @@ function Buttons() {
           <i className="fas fa-calendar-alt"></i>
         </button>
       </Link>
+      <Link to="/man">
+        <button>
+        <i class="fas fa-search"></i>
+        </button>
+      </Link>
       <Link to="/users">
         <button>
           <i className="fas fa-users"></i>
