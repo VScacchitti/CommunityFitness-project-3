@@ -1,17 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Buttons() {
   return (
     <div className="buttons">
-      <button>
-        <i className="fas fa-plus"></i>
-      </button>
-      <button>
-        <i className="fas fa-calendar-alt"></i>
-      </button>
-      <button>
-        <i className="fas fa-users"></i>
-      </button>
+      <Link to="/workout">
+        <button>
+          <i className="fas fa-plus"></i>
+        </button>
+      </Link>
+      <Link to="/plan">
+        <button>
+          <i className="fas fa-calendar-alt"></i>
+        </button>
+      </Link>
+      <Link to="/users">
+        <button>
+          <i className="fas fa-users"></i>
+        </button>
+      </Link>
     </div>
   );
 }

@@ -5,18 +5,9 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Man from "./pages/Man";
 import DragNDrop from "./components/DragNDrop";
-import WorkoutForm from "./components/WorkoutForm"
-
-// const data = [
-//   { title: "Sunday", items: ["A", "B"] },
-//   { title: "Monday", items: ["1", "2", "3"] },
-//   { title: "Tuesday", items: ["4", "5"] },
-//   { title: "Wednesday", items: ["C", "D"] },
-//   { title: "Thursday", items: ["E", "F"] },
-//   { title: "Friday", items: ["G", "H"] },
-//   { title: "Saturday", items: ["I", "J"] },
-// ];
+import WorkoutForm from "./components/WorkoutForm";
 
 function App() {
   return (
@@ -37,6 +28,9 @@ function App() {
         </Route>
         <Route exact path={"/workout"}>
           <WorkoutForm />
+        </Route>
+        <Route exact path={"/man"}>
+          <Man />
         </Route>
       </Switch>
     </Router>

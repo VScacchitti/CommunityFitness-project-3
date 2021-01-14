@@ -243,13 +243,25 @@ header .logo {
 .container-man {
   display: flex;
 }
-.man-front {
+.man-front,
+.man-back {
   position: relative;
+  width: 300px;
+  margin: 5px;
 }
-.man-f-inner {
+.man-front img,
+.man-back img {
+  width: 300px;
+}
+.man-f-inner,
+.man-b-inner {
   position: absolute;
   top:0;
   left:0;
+}
+.man-f-inner img,
+.man-b-inner img {
+  width: 300px;
 }
 .muscle-options li {
   cursor: pointer;
