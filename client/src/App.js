@@ -9,6 +9,7 @@ import Man from "./pages/Man";
 import DragNDrop from "./components/DragNDrop";
 import Workout from "./pages/Workout";
 import Users from "./pages/Users";
+import Profile from "./pages/Profile"
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route exact path={"/users"}>
           <Users />
+        </Route>
+        <Route exact path={"/profile"}>
+          <Profile />
         </Route>
       </Switch>
     </Router>
