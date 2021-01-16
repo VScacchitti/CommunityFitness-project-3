@@ -125,7 +125,7 @@ header .logo {
 }
 .signup-form input,
 .login-form input,
-.workout-form input {
+.workout-form input{
   display: block;
   position: relative;
   margin-bottom: 5px;
@@ -272,8 +272,6 @@ header .logo {
   display: none;
 }
 
-.ex-list {
-}
 .ex-item {
   cursor: pointer;
   border: solid 1px #000;
@@ -319,8 +317,80 @@ header .logo {
   list-style: none;
 }
 
-@media screen and (max-width: 375px) {
+.profile-container {
+  position: relative;
+  margin: 20px;
+  display: flex;
+  width: 100%;
+}
+.profile-forms {
+  width: 220px;
+  min-width: 220px;
+}
+.profile-displays {
+  width: 70%;
+  margin: 40px auto;
+  text-align: center;
+}
+.weight-display h2 {
+  margin: 10px;
+  margin-bottom: 60px;
+  color: #99fda2;
+}
+.pr-form,
+.weight-form {
+  margin-bottom: 20px;
+}
+.pr-form h3,
+.weight-form h3 {
+  color: #3dd7fd;
+}
+.pr-form form,
+.weight-form form{
+  display: flex;
+  flex-direction: column;
+}
+.pr-form input, 
+.weight-form input {
+  display: block;
+  position: relative;
+  margin-bottom: 5px;
+  line-height: 1rem;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+  width: 220px;
+}
+.pr-form button,
+.weight-form button {
+  padding: 10px;
+  font-size: .8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #99fda2, #016696);
+  border: none;
+  border-radius: 5px;
+  transition: background 1s ease-out;
+}
+.pr-form button:hover,
+.pr-form button:active,
+.weight-form button:hover, 
+.weight-form button:active, {
+  background: #99fda2;
+}
+
+@media screen and (max-width: 376px) {
   header .logo {
     font-size: 2rem;
+  }
+  .profile-forms,
+  .weight-form,
+  .weight-form input,
+  .pr-form,
+  .pr-form input {
+    width: 100px;
+    min-width: 100px;
   }
 }
