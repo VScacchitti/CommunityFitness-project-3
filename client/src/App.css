@@ -252,26 +252,29 @@ header .logo {
 .add-to-calendar button {
   background: linear-gradient(to right, #99fda2, #016696);
   border: none;
-  width: 10vw;
-  max-width: 50px;
+  /* width: 15vw; */
+  width: 100px;
   height: 10vw;
-  max-height: 50px;
+  max-height: 40px;
   border-radius: 15px;
   transition: background 1s ease-out;
   cursor: pointer;
+  font-size: .9rem;
+  font-weight: bold;
+  margin-right: 10px;
 }
 .add-to-calendar button:hover,
 .add-to-calendar button:active {
   background: #99fda2;
 }
 .add-to-calendar i {
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: #010014;
 }
 
 .popup {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 20%;
   width: 60vw;
   padding: 20px 30px;
