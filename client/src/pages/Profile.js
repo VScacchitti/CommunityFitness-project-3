@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Container from "../components/Container";
+// import Container from "../components/Container";
 import RecordForm from "../components/RecordForm";
 import WeightForm from "../components/WeightForm";
 import WeightDisplay from "../components/WeightDisplay";

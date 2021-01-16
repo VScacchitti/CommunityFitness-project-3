@@ -20,9 +20,9 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByName: function(req, res) {
+  findByBodypart: function(req, res) {
     db.Exercise
-      .findOne({bodypart: req.query})
+      .findOne({bodypart: req.params.bodypart})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
