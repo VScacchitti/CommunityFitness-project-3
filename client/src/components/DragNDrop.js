@@ -1,24 +1,25 @@
 import React, { useState, useRef, useEffect } from "react";
 import Container from "./Container";
 // import recordsAPI from "../utils/record/API";
-// import exerciseAPI from "../utils/exercise/API";
+import exerciseAPI from "../utils/exercise/API";
 import workoutAPI from "../utils/workout/API";
 
 function DragNDrop() {
   const data = [
     { title: "Sunday", items: [] },
-    { title: "Monday", items: ["1", "2", "3"] },
-    { title: "Tuesday", items: ["4", "5"] },
-    { title: "Wednesday", items: ["C", "D"] },
-    { title: "Thursday", items: ["E", "F"] },
-    { title: "Friday", items: ["G", "H"] },
-    { title: "Saturday", items: ["I", "J"] },
+    { title: "Monday", items: ["Chest"] },
+    { title: "Tuesday", items: ["Glutes"] },
+    { title: "Wednesday", items: ["Back", "Biceps"] },
+    { title: "Thursday", items: ["Cindy"] },
+    { title: "Friday", items: ["Shoulders", "Triceps"] },
+    { title: "Saturday", items: ["Quads"] },
   ];
 
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
-  const [hide, setHide] = useState(true);
-  // const [exercises, setExercies] = useState([]);
+  const [hideWO, setHide] = useState(true);
+  const [hideEx, setHideEx] = useState(true);
+  const [exercises, setExercises] = useState([]);
   const [workouts, setWorkouts] = useState([]);
 
   const dragItem = useRef();
@@ -29,6 +30,13 @@ function DragNDrop() {
     .then(res => {
       console.log(res.data);
       setWorkouts(res.data);
+    })
+    .catch(err => console.log(err));
+
+    exerciseAPI.getExercise()
+    .then(res => {
+      console.log(res.data);
+      setExercises(res.data);
     })
     .catch(err => console.log(err));
   },[]);
@@ -94,9 +102,12 @@ function DragNDrop() {
     return "dnd-item";
   };
 
-  const handleAdd = () => {
-    setHide(!hide);
-  }
+  const handleAddWOBtn = () => {
+    setHide(!hideWO);
+  };
+  const handleAddExBtn = () => {
+    setHideEx(!hideEx);
+  };
   // click the add button
   const handleAddWorkout = () => {
     workoutAPI.getWorkout()
@@ -121,8 +132,11 @@ function DragNDrop() {
   return (
     <Container>
       <div className="add-to-calendar">
-        <button onClick={handleAdd}>
-          <i className="fas fa-plus"></i>
+        <button onClick={handleAddWOBtn}>
+          <i className="fas fa-plus"></i> Workout
+        </button>
+        <button onClick={handleAddExBtn}>
+          <i className="fas fa-plus"></i> Exercise
         </button>
       </div>
       <div className="drag-n-drop">
@@ -166,7 +180,7 @@ function DragNDrop() {
           </div>
         ))}
       </div>
-      <div className={ hide ? "popup hide" : "popup"}>
+      <div className={ hideWO ? "popup hide" : "popup"}>
         <div>
           <h1>Select a Workout</h1>
           <div className="ex-list">
@@ -176,9 +190,20 @@ function DragNDrop() {
               </div>
             ))}
           </div>
-          <div>
-            <button onClick={handleAddWorkout}>Add workout</button>
+        
+        </div>
+      </div>
+      <div className={ hideEx ? "popup hide" : "popup"}>
+        <div>
+          <h1>Select an Exercise</h1>
+          <div className="ex-list">
+            {exercises.map((exercise) => (
+              <div key={exercise.id} className="ex-item" name={exercise._id} onClick={() => handleAddExercise(exercise.name)}>
+                {exercise.name}
+              </div>
+            ))}
           </div>
+        
         </div>
       </div>
     </Container>
