@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import Container from "../components/Container"
+import API from "../utils/exercise/API";
 import Arms from "../Muscle/Images/Muscle Front/Arms.jpg";
 import Chest from "../Muscle/Images/Muscle Front/Chest.jpg";
 import Core from "../Muscle/Images/Muscle Front/Core.jpg";
@@ -18,6 +19,7 @@ import Triceps from "../Muscle/Images/Muscle Back/Triceps.jpg";
 import MusclemanBack from "../Muscle/Images/Muscle Back/MuscleManBACKBW.jpg";
 
 function Home() {
+  const [body, setBody] = useState([]);
   const [arms, setArms] = useState(false);
   const [chest, setChest] = useState(false);
   const [core, setCore] = useState(false);
@@ -32,6 +34,15 @@ function Home() {
   const [teresmajor, setTeresmajor] = useState(false);
   const [trapezius, setTrapezius] = useState(false);
   const [triceps, setTriceps] = useState(false);
+
+  const hide = {
+    display: "none",
+    zIndex: -1,
+  };
+  const show = {
+    display: "flex",
+    zIndex: 10,
+  };
 
   const handleArms = () => {
     setArms(!arms);
@@ -76,46 +87,79 @@ function Home() {
     setTriceps(!triceps);
   };
 
-  const hide = {
-    display: "none",
-    zIndex: -1
-  };
-  const show = {
-    display: "flex",
-    zIndex: 10
-  };
-  
+  function searchArms(e) {
+    API.getExercisebyBodypart(e.target.id)
+      .then((results) => {
+        console.log(results);
+        setBody(results.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="container-man">
       <div className="muscle-box">
         <div className="man-front">
           <img src={MuscleMan} alt="anterior muscle groups" />
           <div className="man-f-inner">
-            <img src={Arms} style={arms ? show : hide} alt="arms"/>
-            <img src={Chest} style={chest ? show : hide} alt="chest"/>
-            <img src={Core} style={core ? show : hide} alt="core"/>
-            <img src={Shoulders} style={shoulders ? show : hide} alt="shoulders"/>
-            <img src={Legs} style={legs ? show : hide} alt="legs"/>
+            <img src={Arms} style={arms ? show : hide} alt="arms" />
+            <img src={Chest} style={chest ? show : hide} alt="chest" />
+            <img src={Core} style={core ? show : hide} alt="core" />
+            <img
+              src={Shoulders}
+              style={shoulders ? show : hide}
+              alt="shoulders"
+            />
+            <img src={Legs} style={legs ? show : hide} alt="legs" />
           </div>
         </div>
       </div>
       <div className="man-back">
         <img src={MusclemanBack} alt="posterior muscle groups" />
         <div className="man-b-inner">
-          <img src={Calf} style={calf ? show : hide} alt="calves"/>
-          <img src={Deltoid} style={deltoid ? show : hide} alt="deltoids"/>
-          <img src={GluteusMax} style={gluteusmax ? show : hide} alt="gluteus maximus"/>
-          <img src={GluteusMed} style={gluteusmed ? show : hide} alt="gluteus medius"/>
-          <img src={Hamstrings} style={hamstrings ? show : hide} alt="hamstrings"/>
-          <img src={Latissimus} style={latissimus ? show : hide} alt="latissimus"/>
-          <img src={TeresMajor} style={teresmajor ? show : hide} alt="teres major"/>
-          <img src={Trapezius} style={trapezius ? show : hide} alt="trapezius"/>
-          <img src={Triceps} style={triceps ? show : hide} alt="triceps"/>
+          <img src={Calf} style={calf ? show : hide} alt="calves" />
+          <img src={Deltoid} style={deltoid ? show : hide} alt="deltoids" />
+          <img
+            src={GluteusMax}
+            style={gluteusmax ? show : hide}
+            alt="gluteus maximus"
+          />
+          <img
+            src={GluteusMed}
+            style={gluteusmed ? show : hide}
+            alt="gluteus medius"
+          />
+          <img
+            src={Hamstrings}
+            style={hamstrings ? show : hide}
+            alt="hamstrings"
+          />
+          <img
+            src={Latissimus}
+            style={latissimus ? show : hide}
+            alt="latissimus"
+          />
+          <img
+            src={TeresMajor}
+            style={teresmajor ? show : hide}
+            alt="teres major"
+          />
+          <img
+            src={Trapezius}
+            style={trapezius ? show : hide}
+            alt="trapezius"
+          />
+          <img src={Triceps} style={triceps ? show : hide} alt="triceps" />
         </div>
       </div>
       <div className="muscle-options">
         <ul>
-          <li id="arms" onMouseOver={handleArms} onMouseLeave={handleArms}>
+          <li
+            id="arms"
+            onMouseOver={handleArms}
+            onMouseLeave={handleArms}
+            onClick={searchArms}
+          >
             Arms
           </li>
           <li id="chest" onMouseOver={handleChest} onMouseLeave={handleChest}>
@@ -124,42 +168,84 @@ function Home() {
           <li id="core" onMouseOver={handleCore} onMouseLeave={handleCore}>
             Core
           </li>
-          <li id="shoulders" onMouseOver={handleShoulders} onMouseLeave={handleShoulders}>
+          <li
+            id="shoulders"
+            onMouseOver={handleShoulders}
+            onMouseLeave={handleShoulders}
+          >
             Shoulders
           </li>
           <li id="legs" onMouseOver={handleLegs} onMouseLeave={handleLegs}>
             Legs
           </li>
-          <li id="calfmuscles" onMouseOver={handleCalf} onMouseLeave={handleCalf}>
+          <li
+            id="calfmuscles"
+            onMouseOver={handleCalf}
+            onMouseLeave={handleCalf}
+          >
             CalfMuscles
           </li>
-          <li id="deltoid" onMouseOver={handleDeltoid} onMouseLeave={handleDeltoid}>
+          <li
+            id="deltoid"
+            onMouseOver={handleDeltoid}
+            onMouseLeave={handleDeltoid}
+          >
             Deltoid
           </li>
-          <li id="gluteusmax" onMouseOver={handleGluteusMax} onMouseLeave={handleGluteusMax}>
+          <li
+            id="gluteusmax"
+            onMouseOver={handleGluteusMax}
+            onMouseLeave={handleGluteusMax}
+          >
             GluteusMax
           </li>
-          <li id="gluteusmed" onMouseOver={handleGluteusMed} onMouseLeave={handleGluteusMed}>
+          <li
+            id="gluteusmed"
+            onMouseOver={handleGluteusMed}
+            onMouseLeave={handleGluteusMed}
+          >
             GluteusMed
           </li>
-          <li id="hamstrings" onMouseOver={handleHamstrings} onMouseLeave={handleHamstrings}>
+          <li
+            id="hamstrings"
+            onMouseOver={handleHamstrings}
+            onMouseLeave={handleHamstrings}
+          >
             Hamstrings
           </li>
-          <li id="latissimus" onMouseOver={handleLatissimus} onMouseLeave={handleLatissimus}>
+          <li
+            id="latissimus"
+            onMouseOver={handleLatissimus}
+            onMouseLeave={handleLatissimus}
+          >
             Latissimus
           </li>
-          <li id="teresmajor" onMouseOver={handleTeresMajor} onMouseLeave={handleTeresMajor}>
+          <li
+            id="teresmajor"
+            onMouseOver={handleTeresMajor}
+            onMouseLeave={handleTeresMajor}
+          >
             TeresMajor
           </li>
-          <li id="trapezius" onMouseOver={handleTrapezius} onMouseLeave={handleTrapezius}>
+          <li
+            id="trapezius"
+            onMouseOver={handleTrapezius}
+            onMouseLeave={handleTrapezius}
+          >
             Trapezius
           </li>
-          <li id="triceps" onMouseOver={handleTriceps} onMouseLeave={handleTriceps}>
+          <li
+            id="triceps"
+            onMouseOver={handleTriceps}
+            onMouseLeave={handleTriceps}
+          >
             Triceps
           </li>
         </ul>
       </div>
-      
+      <div className="search-results">
+        <p>{body.name}</p>
+      </div>
     </div>
   );
 }

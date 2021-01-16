@@ -17,8 +17,7 @@ router.route("/:name")
   .get(exerciseController.findByName)
 
 //Queries to get by Bodypart
-  router.route("/:bodypart")
-  .get(exerciseController.findByName)
+  router.route("/bodypart/:bodypart")
+  .get(exerciseController.findByBodypart)
 
 module.exports = router;
-

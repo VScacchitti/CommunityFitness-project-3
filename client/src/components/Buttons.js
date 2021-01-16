@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 function Buttons() {
   return (
     <div className="buttons">
+      <Link to="/profile">
+        <button>
+          <i class="fas fa-user"></i>
+        </button>
+      </Link>
       <Link to="/workout">
         <button>
           <i className="fas fa-plus"></i>
@@ -16,7 +21,7 @@ function Buttons() {
       </Link>
       <Link to="/man">
         <button>
-        <i class="fas fa-search"></i>
+          <i class="fas fa-search"></i>
         </button>
       </Link>
       <Link to="/users">

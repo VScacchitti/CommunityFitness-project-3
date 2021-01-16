@@ -14,8 +14,8 @@ export default {
     },
 
    //Gets the Exercise by bodypart
-    getExercisebyBodypart: function (query) {
-        return axios.get("/api/exercise/?bodypart=" + query);
+    getExercisebyBodypart: function (bodypart) {
+        return axios.get("/api/exercise/bodypart/" + bodypart);
     },
 
   //Gets the Eercises by name
