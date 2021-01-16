@@ -87,10 +87,10 @@ function Home() {
     setTriceps(!triceps);
   };
 
-  function searchArms(e) {
+  function search(e) {
     API.getExercisebyBodypart(e.target.id)
       .then((results) => {
-        console.log(results);
+        console.log(results.data);
         setBody(results.data);
       })
       .catch((err) => console.log(err));
@@ -155,96 +155,105 @@ function Home() {
       <div className="muscle-options">
         <ul>
           <li
-            id="arms"
-            onMouseOver={handleArms}
-            onMouseLeave={handleArms}
-            onClick={searchArms}
-          >
+            id="Arms" onMouseOver={handleArms} onMouseLeave={handleArms} onClick={search}>
             Arms
           </li>
-          <li id="chest" onMouseOver={handleChest} onMouseLeave={handleChest}>
+          <li id="Chest" onMouseOver={handleChest} onMouseLeave={handleChest} onClick={search}>
             Chest
           </li>
-          <li id="core" onMouseOver={handleCore} onMouseLeave={handleCore}>
+          <li id="Core" onMouseOver={handleCore} onMouseLeave={handleCore} onClick={search}>
             Core
           </li>
           <li
-            id="shoulders"
+            id="Shoulders"
             onMouseOver={handleShoulders}
             onMouseLeave={handleShoulders}
+            onClick={search}
           >
             Shoulders
           </li>
-          <li id="legs" onMouseOver={handleLegs} onMouseLeave={handleLegs}>
+          <li id="Legs" onMouseOver={handleLegs} onMouseLeave={handleLegs} onClick={search}>
             Legs
           </li>
           <li
-            id="calfmuscles"
+            id="Calfmuscles"
             onMouseOver={handleCalf}
             onMouseLeave={handleCalf}
+            onClick={search}
           >
             CalfMuscles
           </li>
           <li
-            id="deltoid"
+            id="Shoulders"
             onMouseOver={handleDeltoid}
             onMouseLeave={handleDeltoid}
+            onClick={search}
           >
             Deltoid
           </li>
           <li
-            id="gluteusmax"
+            id="Legs"
             onMouseOver={handleGluteusMax}
             onMouseLeave={handleGluteusMax}
+            onClick={search}
           >
             GluteusMax
           </li>
           <li
-            id="gluteusmed"
+            id="Legs"
             onMouseOver={handleGluteusMed}
             onMouseLeave={handleGluteusMed}
+            onClick={search}
           >
             GluteusMed
           </li>
           <li
-            id="hamstrings"
+            id="Legs"
             onMouseOver={handleHamstrings}
             onMouseLeave={handleHamstrings}
+            onClick={search}
           >
             Hamstrings
           </li>
           <li
-            id="latissimus"
+            id="Back"
             onMouseOver={handleLatissimus}
             onMouseLeave={handleLatissimus}
+            onClick={search}
           >
             Latissimus
           </li>
           <li
-            id="teresmajor"
+            id="Back"
             onMouseOver={handleTeresMajor}
             onMouseLeave={handleTeresMajor}
+            onClick={search}
           >
             TeresMajor
           </li>
           <li
-            id="trapezius"
+            id="Back"
             onMouseOver={handleTrapezius}
             onMouseLeave={handleTrapezius}
+            onClick={search}
           >
             Trapezius
           </li>
           <li
-            id="triceps"
+            id="Arms"
             onMouseOver={handleTriceps}
             onMouseLeave={handleTriceps}
+            onClick={search}
           >
             Triceps
           </li>
         </ul>
       </div>
       <div className="search-results">
-        <p>{body.name}</p>
+        {body.map((item) => (
+          <p>{item.name}</p>
+        ))}
+        {/* <p>{body.name}</p> */}
       </div>
     </div>
   );

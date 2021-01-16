@@ -10,7 +10,7 @@ mongoose.connect(
     {
       focus: "Strength",
       name: "Barbell Chest Press(Flat)",
-      bodypart: "arms",
+      bodypart: "Chest",
       description: "Lie back on a flat bench with your head under the barbell rack and your feet flat on the floor. Grasp the bar (overhand grip) with your hands just outside shoulder width, press the barbell off the rack (unrack the bar), and begin with it directly over your upper pectorals (collar bones) with your arms extended. Your head, shoulders, and buttocks should be solidly on the bench.Bend your elbows to slowly lower the bar toward your mid-chest – nipple line (or lower chest), keeping your elbows pointed at 45 to 60 degrees from the sides. Touch your chest lightly with the bar, then press it back up in a slight backward arcing motion so the bar ends up over your upper chest with your arms extended but not locked out. Keep your back straight (not arched) and against the bench all the time.",
       image: "scripts/Images/flat-barbell-bench-press.jpg",
       scale: "light weight, floor press, just the bar, push-up"

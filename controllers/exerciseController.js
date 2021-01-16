@@ -22,7 +22,7 @@ module.exports = {
   },
   findByBodypart: function(req, res) {
     db.Exercise
-      .findOne({bodypart: req.params.bodypart})
+      .find({bodypart: req.params.bodypart})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
