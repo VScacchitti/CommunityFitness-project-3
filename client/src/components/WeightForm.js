@@ -39,8 +39,8 @@ class WeightForm extends Component {
 
   render(){
     return (
-        <div className="workout-form">
-            <h2>Add or Update Weight!</h2>
+        <div className="weight-form">
+            <h3>Add or Update Weight!</h3>
           <form >
             <input value={this.state.value} type="text" placeholder="Weight" onChange={this.handleChangeWeight} />
             <input value={this.state.value} type="text" placeholder="lbs" onChange={this.handleChangeUnit} />
