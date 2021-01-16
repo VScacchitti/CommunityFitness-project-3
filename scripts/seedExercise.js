@@ -3,7 +3,7 @@ const db = require("../models/exercise");
 
 mongoose.connect(
     process.env.MONGODB_URI ||
-    "mongodb://localhost/communityfitnessbackup"
+    "mongodb://localhost/communityfitness"
   );
 
   const exerciseSeed = [
@@ -501,7 +501,7 @@ mongoose.connect(
   
   db.Exercise
     .remove({})
-    .then(() => db2.Exercise.collection.insertMany(exerciseSeed))
+    .then(() => db.Exercise.collection.insertMany(exerciseSeed))
     .then(data => {
       console.log(data.result.n + " records inserted!");
       process.exit(0);

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models/record");
+const db = require("../models/weight");
 
 
 
@@ -10,23 +10,17 @@ mongoose.connect(
   "mongodb://localhost/communityfitness"
 );
 
-const recordSeed = [
+const weightSeed = [
     {
-      name: "Deadlift",
-      weight: 375,
-      reps: 1
-
-    },
-    {
-      name: "Clean and Jerk",
-      weight: 195,
-      reps: 1
-    }
+        day: new Date().setDate(new Date().getDate()-10),
+        weight: 195,
+        units: "lbs" 
+      }
   ];
 
-  db.Record
+  db.Weight
   .remove({})
-  .then(() => db.Record.collection.insertMany(recordSeed))
+  .then(() => db.Weight.collection.insertMany(weightSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -35,8 +29,3 @@ const recordSeed = [
     console.error(err);
     process.exit(1);
   });
-
-
-
-
-

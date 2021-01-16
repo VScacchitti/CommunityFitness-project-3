@@ -5,18 +5,12 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Man from "./pages/Man";
 import DragNDrop from "./components/DragNDrop";
-import WorkoutForm from "./components/WorkoutForm"
+import Workout from "./pages/Workout";
+import Users from "./pages/Users";
+import Profile from "./pages/Profile"
 
-// const data = [
-//   { title: "Sunday", items: ["A", "B"] },
-//   { title: "Monday", items: ["1", "2", "3"] },
-//   { title: "Tuesday", items: ["4", "5"] },
-//   { title: "Wednesday", items: ["C", "D"] },
-//   { title: "Thursday", items: ["E", "F"] },
-//   { title: "Friday", items: ["G", "H"] },
-//   { title: "Saturday", items: ["I", "J"] },
-// ];
 
 function App() {
   return (
@@ -36,7 +30,16 @@ function App() {
           <DragNDrop />
         </Route>
         <Route exact path={"/workout"}>
-          <WorkoutForm />
+          <Workout />
+        </Route>
+        <Route exact path={"/man"}>
+          <Man />
+        </Route>
+        <Route exact path={"/users"}>
+          <Users />
+        </Route>
+        <Route exact path={"/profile"}>
+          <Profile />
         </Route>
       </Switch>
     </Router>
