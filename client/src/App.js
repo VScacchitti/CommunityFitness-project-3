@@ -8,8 +8,8 @@ import Login from "./pages/Login";
 import Man from "./pages/Man";
 import DragNDrop from "./components/DragNDrop";
 import Workout from "./pages/Workout";
-import Users from "./pages/Users";
 import Profile from "./pages/Profile"
+import Social from "./pages/Social";
 
 
 function App() {
@@ -35,8 +35,8 @@ function App() {
         <Route exact path={"/man"}>
           <Man />
         </Route>
-        <Route exact path={"/users"}>
-          <Users />
+        <Route exact path={"/social"}>
+          <Social />
         </Route>
         <Route exact path={"/profile"}>
           <Profile />
