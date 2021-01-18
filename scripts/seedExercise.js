@@ -329,6 +329,22 @@ mongoose.connect(
     },
     {
       focus: "Strength",
+      name: "Standing Calf Raise",
+      bodypart: "Calfmuscles",
+      description: "",
+      image: "",
+      scale: ""
+    },
+    {
+      focus: "Strength",
+      name: "Seated Calf Raise",
+      bodypart: "Calfsmuscles",
+      description: "",
+      image: "",
+      scale: ""
+    },
+    {
+      focus: "Strength",
       name: "Clean*",
       bodypart: "Multiple",
       description: "Begin with the bar on the floor positioned close to your shins over your shoelaces. Stand with your feet hip-width apart, reach down and grab the bar with an overhand, shoulder-width grip. Sit your butt down and stick your chest up. Pull your shoulder blades down and back and tighten your core. Your elbows should be rotated out to the sides with your arms completely straight. Look straight ahead. Pull the bar off the floor by powerfully extending your legs, making sure to keep your back flat and your chest up.  The bar should travel vertically in a straight line, not into you like during a Deadlift. Once the bar is above your knees, shift your torso to a vertical position and rebend your knees slightly. This is the scoop Now initiate the second pull—the most powerful portion of the movement—by violently jumping straight up, fully extending your hips, knees and ankles (triple extension), while simultaneously shrugging the bar with your shoulders. Keep the bar as close to your body as possible. Quickly drop into a quarter-squat position with your back straight, and hips and knees slightly bent. Drive your elbows forward to rotate them around in the bar and catch the bar in the racked position across the front of your shoulders with your fingertips under the bar. Now stand up.",
