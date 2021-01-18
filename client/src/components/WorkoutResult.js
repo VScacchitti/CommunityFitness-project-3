@@ -1,6 +1,7 @@
 import React from "react";
 import  Container from "../components/Container";
 
+
 const WorkoutResult = props => {
   return (
     <Container>
