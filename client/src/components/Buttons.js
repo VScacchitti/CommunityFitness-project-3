@@ -24,7 +24,7 @@ function Buttons() {
           <i class="fas fa-search"></i>
         </button>
       </Link>
-      <Link to="/users">
+      <Link to="/social">
         <button>
           <i className="fas fa-users"></i>
         </button>
