@@ -43,7 +43,7 @@ header .logo {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 #home {
@@ -201,10 +201,10 @@ header .logo {
   width: 100%;
   height: 100%;
   padding: 0.5rem;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, 150px);
   color: white;
   align-items: start;
-  margin: 20px 10vw;
+  margin: 20px;
 }
 .dnd-day {
   background-color: #1f363b;
@@ -274,9 +274,10 @@ header .logo {
 
 .popup {
   position: absolute;
-  top: 5%;
+  top: 40px;
   left: 20%;
-  width: 60vw;
+  width: 100%;
+  max-width: 440px;
   padding: 20px 30px;
   border-radius: 5px;
   background: #fff;
@@ -322,7 +323,7 @@ header .logo {
   width: 300px;
 }
 .muscle-options {
-  margin: 10px;
+  margin: 10px 20px;
   color: #3dd7fd;
 }
 .muscle-options li {
@@ -330,6 +331,9 @@ header .logo {
   z-index: -1;
   text-decoration: none;
   list-style: none;
+}
+.search-results {
+  margin: 10px 20px;
 }
 
 .profile-container {
@@ -392,20 +396,52 @@ header .logo {
 .pr-form button:hover,
 .pr-form button:active,
 .weight-form button:hover, 
-.weight-form button:active, {
+.weight-form button:active {
   background: #99fda2;
 }
+@media screen and (max-width: 670px) {
+  .container-man {
+    display: flex;
+    flex-direction: column;
+  }
+  .muscle-options {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    overflow-x: hidden;
+  }
+   .drag-n-drop {
+    grid-template-columns: repeat(auto-fill, 200px);
+    margin: 0;
+  }
+  .ex-item {
+    width: 150px;
+  }
+  
+}
+
 
 @media screen and (max-width: 376px) {
-  header .logo {
-    font-size: 2rem;
+  .popup {
+    position: absolute;
+    left: 20px;
+    width: 90%;
+    padding: 20px 30px;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    z-index: 1;
   }
   .profile-forms,
   .weight-form,
   .weight-form input,
   .pr-form,
   .pr-form input {
-    width: 100px;
-    min-width: 100px;
+    width: 150px;
+    min-width: 150px;
   }
 }
+
