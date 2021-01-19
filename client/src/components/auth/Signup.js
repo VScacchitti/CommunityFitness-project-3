@@ -2,18 +2,22 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
+import ErrorNotice from "../ErrorNotice";
 
 export default function Signup() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [passwordCheck, setPasswordCheck] = useState();
     const [name, setName] = useState();
+    const [error, setError] = useState();
 
     const { setUserData } = useContext(UserContext);
     const history = useHistory();
 
     const submit = async (e) => {
         e.preventDefault();
+
+        try {
         const newUser = { email, password, passwordCheck, name };
         await Axios.post(
             "http://localhost:3001/users/register",
@@ -29,11 +33,18 @@ export default function Signup() {
         });
         localStorage.setItem("auth-token", loginRes.data.token);
         history.push("/");
-    };
+    }
+    catch(err) {
+        err.response.data.msg && setError(err.response.data.msg);
+    }
+};
 
     return (
         <div>
             <h2>Signup</h2>
+            {error && (
+                <ErrorNotice message={error} clearError={() => setError(undefined)} />
+            )}
             <form onSubmit={submit}>
                 <label htmlFor="signup-email">Email</label>
                 <input id="signup-email" 

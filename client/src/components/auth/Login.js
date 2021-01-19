@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Axios from "axios";
+import ErrorNotice from "../ErrorNotice";
 
 export default function Login() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [error, setError] = useState();
 
     const { setUserData } = useContext(UserContext);
     const history = useHistory();
@@ -27,6 +29,9 @@ export default function Login() {
     return (
         <div>
             <h2>Login</h2>
+            {error && (
+                <ErrorNotice message={error} clearError={() => setError(undefined)} />
+            )}
             <form onSubmit={submit}>
                 <label htmlFor="login-email">Email</label>
                 <input id="login-email" 
