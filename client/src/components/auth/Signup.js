@@ -1,9 +1,66 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { useHistory } from "react-router-dom";
+import UserContext from "../../context/UserContext";
+import Axios from "axios";
 
 export default function Signup() {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const [passwordCheck, setPasswordCheck] = useState();
+    const [name, setName] = useState();
+
+    const { setUserData } = useContext(UserContext);
+    const history = useHistory();
+
+    const submit = async (e) => {
+        e.preventDefault();
+        const newUser = { email, password, passwordCheck, name };
+        await Axios.post(
+            "http://localhost:3001/users/register",
+            newUser
+        );
+        const loginRes = await Axios.post("http://localhost:3001/users/login", {
+        email,
+        password,
+        });
+        setUserData({
+            token: loginRes.data.token,
+            user: loginRes.data.user,
+        });
+        localStorage.setItem("auth-token", loginRes.data.token);
+        history.push("/");
+    };
+
     return (
         <div>
-            Sign Up
+            <h2>Signup</h2>
+            <form onSubmit={submit}>
+                <label htmlFor="signup-email">Email</label>
+                <input id="signup-email" 
+                type="email" 
+                onChange={e => setEmail(e.target.value)} 
+                />
+
+                <label htmlFor="signup-password">Password</label>
+                <input id="signup-password" 
+                type="password" 
+                onChange={e => setPassword(e.target.value)}     
+                />
+
+                <input 
+                type="password" 
+                placeholder="Verify password" 
+                onChange={e => setPasswordCheck(e.target.value)}     
+                />
+
+                <label htmlFor="signup-name">Name</label>
+                <input id="signup-name" 
+                type="text"
+                onChange={e => setName(e.target.value)} 
+                />
+
+                <input type="submit" value="Signup" />
+            </form>
         </div>
     )
 }
