@@ -1,3 +1,27 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+
+// Create Schema
+const UserSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  Gym Name: {
+    type: String,
+    required: true
+  },
+  Membership ID#: {
+    type: String,
+    required: true
+  }
+});
+
+const Memberships = mongoose.model("Membership", UserSchema);
+
+module.exports = Memberships;
+
 <canvas id="barcode"></canvas>
 <svg id="code128"></svg>
 
