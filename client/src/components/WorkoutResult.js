@@ -1,5 +1,6 @@
 import React from "react";
 import  Container from "../components/Container";
+import CommentBox from "../components/CommentBox"
 
 
 const WorkoutResult = props => {
@@ -15,6 +16,7 @@ const WorkoutResult = props => {
            <h4>{savedworkout.description}</h4>
            <br/>
            <br/>
+           <CommentBox />
           </div>
         );
       })
