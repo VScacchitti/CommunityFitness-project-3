@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import recordAPI from "../utils/record/API";
+import cogoToast from 'cogo-toast';
 
 class RecordForm extends Component {
   state = {
@@ -38,7 +39,7 @@ class RecordForm extends Component {
     recordAPI
       .saveRecord(savedRecord)
       .then(console.log(savedRecord))
-      .then(alert("You added a weight"))
+      .then(cogoToast.success("You added a new Personal Record!"))
       .catch((err) => console.log(err));
   };
 

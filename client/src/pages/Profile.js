@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import RecordForm from "../components/RecordForm";
 import WeightForm from "../components/WeightForm";
 import WeightDisplay from "../components/WeightDisplay";
+import RecordDisplay from "../components/RecordDisplay";
 
 class Profile extends Component {
   render() {
@@ -16,7 +17,7 @@ class Profile extends Component {
           <WeightDisplay />
           
           <h3>Personal Records</h3>
-          {/* <PR Display will go here> */}
+          <RecordDisplay />
         </div>
       </div>
     );

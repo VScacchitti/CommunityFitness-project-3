@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import weightAPI from "../utils/weight/API"
+import weightAPI from "../utils/weight/API";
+import cogoToast from 'cogo-toast';
 
 
 class WeightForm extends Component {
@@ -32,7 +33,7 @@ class WeightForm extends Component {
         }
         weightAPI.saveWeight(savedWeight)
         .then(console.log(savedWeight))
-        .then(alert("You added a weight"))
+        .then(cogoToast.success("You added a weight"))
         .catch(err => console.log(err));   
     }
 
