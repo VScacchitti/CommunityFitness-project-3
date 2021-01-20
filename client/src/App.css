@@ -137,7 +137,7 @@ header .logo {
 }
 .signup-form input,
 .login-form input,
-.workout-form input{
+.workout-form input {
   display: block;
   position: relative;
   margin-bottom: 5px;
@@ -259,7 +259,7 @@ header .logo {
   border-radius: 15px;
   transition: background 1s ease-out;
   cursor: pointer;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: bold;
   margin-right: 10px;
 }
@@ -365,11 +365,11 @@ header .logo {
   color: #3dd7fd;
 }
 .pr-form form,
-.weight-form form{
+.weight-form form {
   display: flex;
   flex-direction: column;
 }
-.pr-form input, 
+.pr-form input,
 .weight-form input {
   display: block;
   position: relative;
@@ -386,7 +386,7 @@ header .logo {
 .pr-form button,
 .weight-form button {
   padding: 10px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: bold;
   background: linear-gradient(to right, #99fda2, #016696);
   border: none;
@@ -395,7 +395,7 @@ header .logo {
 }
 .pr-form button:hover,
 .pr-form button:active,
-.weight-form button:hover, 
+.weight-form button:hover,
 .weight-form button:active {
   background: #99fda2;
 }
@@ -413,16 +413,14 @@ header .logo {
   body {
     overflow-x: hidden;
   }
-   .drag-n-drop {
+  .drag-n-drop {
     grid-template-columns: repeat(auto-fill, 200px);
     margin: 0;
   }
   .ex-item {
     width: 150px;
   }
-  
 }
-
 
 @media screen and (max-width: 376px) {
   .popup {
@@ -445,3 +443,76 @@ header .logo {
   }
 }
 
+.commentbutton {
+  border: solid 1px #fff;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: #99fda2;
+
+  font-weight: bold;
+  color: #000;
+}
+.comment-box {
+  max-width: 30rem;
+  color: #000;
+  border: solid 2px #fff;
+  background: linear-gradient(to right, #99fda2, #016696);
+  opacity: 90%;
+  border-radius: 0.875rem;
+  padding: 0.2rem 1rem 2rem;
+}
+.comment-form {
+  background-color: #000;
+  border: solid 1px #fff;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.comment-count {
+  color: #000;
+  padding: 5px;
+}
+#comment-reveal {
+  float: right;
+  background-color: #99fda2;
+  border: solid 1px #fff;
+  font-weight: bold;
+  color: #000;
+}
+.comment {
+  border-top: 0.125rem solid #fff;
+  background: linear-gradient(to right, #99fda2, #016696);
+}
+.comment-body {
+  font-style: italic;
+  margin-left: 1rem;
+}
+.comment-footer {
+  margin-bottom: 1rem;
+}
+
+.result-h3 {
+  text-align: center;
+  font-size: 36px;
+}
+.workout-result {
+  color: #fff;
+
+  padding: 20px;
+}
+
+.workout-day {
+  background: linear-gradient(to right, #99fda2, #016696);
+  color: #000;
+  margin: 2px;
+  text-align: center;
+}
+
+.workout-name {
+  background: linear-gradient(to right, #99fda2, #016696);
+  color: #000;
+  margin: 2px;
+  text-align: center;
+}
