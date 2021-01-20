@@ -516,3 +516,8 @@ header .logo {
   margin: 2px;
   text-align: center;
 }
+
+.record-display {
+  color: #99fda2;
+  margin: 10px;
+}

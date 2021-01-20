@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import workoutAPI from "../utils/workout/API"
+import cogoToast from 'cogo-toast';
 
 
 class WorkoutForm extends Component {
@@ -41,7 +42,7 @@ class WorkoutForm extends Component {
         }
         workoutAPI.saveWorkout(savedWorkout)
         .then(console.log(savedWorkout))
-        .then(alert("You added the following workout:" + savedWorkout.name))
+        .then(cogoToast.success('You added the workout: ' + savedWorkout.name))
         .catch(err => console.log(err));   
     }
 
