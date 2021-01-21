@@ -44,7 +44,7 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 * [Profile](#profile)
 * [Create a Workout](#workout)
 * [Weekly Plan](#plan)
-* [Search by Muscle](#muscle)
+* [Search by Muscle](#search-by-muscle)
 * [Social](#social)
 
 ## Profile 
