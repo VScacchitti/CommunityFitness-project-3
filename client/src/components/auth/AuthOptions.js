@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import UserContext from "../../context/UserContext";
+import UserContext from "../UserContext";
 
 export default function AuthOptions() {
     const { userData, setUserData } = useContext(UserContext);
 
-    const history =  useHistory();
+    let history =  useHistory();
 
     const signup = () => history.push("/signup");
     const login = () => history.push("/login");

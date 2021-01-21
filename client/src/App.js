@@ -11,7 +11,7 @@ import DragNDrop from "./components/DragNDrop";
 import Workout from "./pages/Workout";
 import Profile from "./pages/Profile"
 import Social from "./pages/Social";
-import UserContext from "./context/UserContext";
+import UserContext from "./components/UserContext";
 
 
 function App() {

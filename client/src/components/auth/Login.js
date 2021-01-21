@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
-import UserContext from "../../context/UserContext";
+import UserContext from "../UserContext";
 import Axios from "axios";
 import ErrorNotice from "../ErrorNotice";
 
@@ -10,10 +10,11 @@ export default function Login() {
     const [error, setError] = useState();
 
     const { setUserData } = useContext(UserContext);
-    const history = useHistory();
+    let history = useHistory();
 
     const submit = async (e) => {
         e.preventDefault();
+        try {
         const loginUser = { email, password };
         const loginRes = await Axios.post(
             "http://localhost:3001/users/login",
@@ -25,6 +26,9 @@ export default function Login() {
         });
         localStorage.setItem("auth-token", loginRes.data.token);
         history.push("/");
+    } catch(err) {
+        err.response.data.msg && setError(err.response.data.msg);
+        }
     };
     return (
         <div>

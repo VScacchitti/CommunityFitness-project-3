@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
-import UserContext from "../../context/UserContext";
+import UserContext from "../UserContext";
 import Axios from "axios";
 import ErrorNotice from "../ErrorNotice";
 
@@ -12,7 +12,7 @@ export default function Signup() {
     const [error, setError] = useState();
 
     const { setUserData } = useContext(UserContext);
-    const history = useHistory();
+    let history = useHistory();
 
     const submit = async (e) => {
         e.preventDefault();

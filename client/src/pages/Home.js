@@ -3,7 +3,7 @@ import Container from "../components/Container"
 import Buttons from "../components/Buttons"
 import Logo from "../components/Logo"
 import { useHistory } from "react-router-dom"
-import UserContext from "../context/UserContext"
+import UserContext from "../components/UserContext"
 
 function Home() {
   const { userData } = useContext(UserContext);
