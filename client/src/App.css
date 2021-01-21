@@ -399,6 +399,139 @@ header .logo {
 .weight-form button:active {
   background: #99fda2;
 }
+
+.social-container {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 700px;
+}
+.social-container .social-title {
+  display: inline-block;
+  margin: 20px 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  background: linear-gradient(to right, #99fda2, #02ccff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.workout {
+  position: relative;
+  background: #010014;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+}
+.workout::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 101%;
+  height: 101%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background: linear-gradient(to bottom left, #99fda2,#02ccff);
+  z-index: -1;
+}
+#workout-name{
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #99fda2;
+}
+.commentbutton {
+  border: solid 1px #fff;
+  border-radius: 0.25rem;
+  padding: 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: #99fda2;
+  font-weight: bold;
+  color: #000;
+}
+.comment-box {
+  max-width: 30rem;
+  color: #3b3b3b;
+  border: solid 2px #fff;
+  background: linear-gradient(to right, #99fda2, #016696);
+  opacity: 90%;
+  border-radius: 0.875rem;
+  padding: 0.2rem 1rem 2rem;
+}
+.comment-box h4 {
+  margin: 5px;
+}
+.comment-form {
+  background-color: #000;
+  border: solid 1px #fff;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.comment-form-fields input,
+.comment-form-fields textarea {
+  outline: none;
+  width: 100%;
+  padding: 5px;
+  font-family: sans-serif;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 3px;
+}
+
+.comment-count {
+  color: #000;
+  padding: 5px;
+}
+#comment-reveal {
+  float: right;
+  background-color: #99fda2;
+  border: solid 1px #fff;
+  padding: 5px;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  color: #000;
+}
+.comment {
+  border-top: 0.125rem solid #fff;
+  background: linear-gradient(to right, #99fda2, #016696);
+}
+.comment-body {
+  font-style: italic;
+  margin-left: 1rem;
+}
+.comment-footer {
+  margin-bottom: 1rem;
+}
+.result-h3 {
+  text-align: center;
+  font-size: 36px;
+}
+.workout-result {
+  color: #fff;
+
+  padding: 20px;
+}
+.workout-day {
+  background: linear-gradient(to right, #99fda2, #016696);
+  color: #000;
+  margin: 2px;
+  text-align: center;
+}
+.workout-name {
+  background: linear-gradient(to right, #99fda2, #016696);
+  color: #000;
+  margin: 2px;
+  text-align: center;
+}
+.record-display {
+  color: #99fda2;
+  margin: 10px;
+}
+
+
 @media screen and (max-width: 670px) {
   .container-man {
     display: flex;
@@ -443,81 +576,3 @@ header .logo {
   }
 }
 
-.commentbutton {
-  border: solid 1px #fff;
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
-  font-weight: bold;
-  background-color: #99fda2;
-
-  font-weight: bold;
-  color: #000;
-}
-.comment-box {
-  max-width: 30rem;
-  color: #000;
-  border: solid 2px #fff;
-  background: linear-gradient(to right, #99fda2, #016696);
-  opacity: 90%;
-  border-radius: 0.875rem;
-  padding: 0.2rem 1rem 2rem;
-}
-.comment-form {
-  background-color: #000;
-  border: solid 1px #fff;
-  border-radius: 0.25rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
-}
-
-.comment-count {
-  color: #000;
-  padding: 5px;
-}
-#comment-reveal {
-  float: right;
-  background-color: #99fda2;
-  border: solid 1px #fff;
-  font-weight: bold;
-  color: #000;
-}
-.comment {
-  border-top: 0.125rem solid #fff;
-  background: linear-gradient(to right, #99fda2, #016696);
-}
-.comment-body {
-  font-style: italic;
-  margin-left: 1rem;
-}
-.comment-footer {
-  margin-bottom: 1rem;
-}
-
-.result-h3 {
-  text-align: center;
-  font-size: 36px;
-}
-.workout-result {
-  color: #fff;
-
-  padding: 20px;
-}
-
-.workout-day {
-  background: linear-gradient(to right, #99fda2, #016696);
-  color: #000;
-  margin: 2px;
-  text-align: center;
-}
-
-.workout-name {
-  background: linear-gradient(to right, #99fda2, #016696);
-  color: #000;
-  margin: 2px;
-  text-align: center;
-}
-
-.record-display {
-  color: #99fda2;
-  margin: 10px;
-}
