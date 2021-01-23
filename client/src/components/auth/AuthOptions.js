@@ -20,7 +20,10 @@ export default function AuthOptions() {
     return (
         <div className="nav"> 
         {userData.user ? (
-            <button onClick={logout}>Logout</button> 
+            <div className="loginout">
+              <button onClick={logout}>Logout</button> 
+            </div>
+            
         ) : (
             <div className="loginout">
                 <button onClick={signup}>Sign Up</button>
