@@ -5,3 +5,5 @@ node_modules
 client/.env
 
 .env
+
+package-lock.json
