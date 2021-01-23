@@ -18,15 +18,15 @@ export default function AuthOptions() {
     };
 
     return (
-        <nav> 
+        <div className="nav"> 
         {userData.user ? (
             <button onClick={logout}>Logout</button> 
         ) : (
-            <>
+            <div className="loginout">
                 <button onClick={signup}>Sign Up</button>
                 <button onClick={login}>Log In</button>
-            </>
+            </div>
         )}    
-        </nav>
+        </div>
     );
 }

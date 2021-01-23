@@ -76,17 +76,19 @@ header .logo {
 }
 .logo-image {
   display: flex;
-  width: 200px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: 160px;
   background: linear-gradient(to right, #99fda2, #02ccff);
-  margin: 5rem auto 10rem;
+  margin: 5rem auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
-.logo-image i {
-  font-size: 10rem;
+.logo-image img {
+  width: 300px;
 }
 
 .buttons {
@@ -115,10 +117,10 @@ header .logo {
 
 /* SIGNUP */
 .login-form form {
-  margin-top: 5rem;
+  margin-top: 25rem;
 }
 .signup-form form {
-  margin-top: 7rem;
+  margin-top: 30rem;
 }
 .signup-form,
 .login-form,
@@ -160,6 +162,7 @@ header .logo {
   border: none;
   border-radius: 5px;
   transition: background 1s ease-out;
+  cursor: pointer;
 }
 .signup-form #signup:hover,
 .signup-form #signup:active,
@@ -169,6 +172,32 @@ header .logo {
 #workoutSubmit:active {
   background: #99fda2;
 }
+
+
+/* Nav buttons */
+.nav {
+  position: absolute;
+  left: 0;
+  top: 80px;
+  margin-top: -10px;
+  margin-left: 15px;
+}
+.loginout button {
+  padding: 5px 10px;
+  margin: 0 3px;
+  font-size: .8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #99fda2, #016696);
+  border: none;
+  border-radius: 5px;
+  transition: background 1s ease-out;
+  cursor: pointer;
+}
+.loginout button:hover,
+.loginout button:active {
+  background: #99fda2;
+}
+
 .workout-form {
   margin-top: 3rem;
 }

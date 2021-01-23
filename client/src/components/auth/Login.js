@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom";
 import UserContext from "../UserContext";
+import Logo from "../../components/Logo";
 import Axios from "axios";
 import ErrorNotice from "../ErrorNotice";
 
@@ -31,8 +32,9 @@ export default function Login() {
         }
     };
     return (
-        <div>
-            <h2>Login</h2>
+      <div>
+      <Logo />
+        <div className="login-form">
             {error && (
                 <ErrorNotice message={error} clearError={() => setError(undefined)} />
             )}
@@ -49,8 +51,9 @@ export default function Login() {
                 onChange={e => setPassword(e.target.value)}     
                 />
 
-                <input type="submit" value="Login" />
+                <input id="login" type="submit" value="Login" />
             </form>
+        </div>
         </div>
     )
 }
