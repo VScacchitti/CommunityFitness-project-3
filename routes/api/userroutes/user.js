@@ -8,10 +8,10 @@ const userController = require("../../../controllers/userController");
 // Register
 router.post("/register", async (req, res) => {
     try { 
-    let {email, password, passwordConfirm, name} = req.body;
+    let {email, password, passwordCheck, name} = req.body;
 
     // Validate
-    if (!email || !password || !passwordConfirm || !name)
+    if (!email || !password || !passwordCheck || !name)
         return res
             .status(400)
             .json({msg: "Not all fields have been entered." });
@@ -19,7 +19,7 @@ router.post("/register", async (req, res) => {
         return res
             .status(400)
             .json({ msg: "The password needs to be at least six characters long." });
-    if (password !== passwordConfirm)
+    if (password !== passwordCheck)
         return res
             .status(400)
             .json({ msg: "Enter the same password twice for verification." });

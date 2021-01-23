@@ -20,10 +20,10 @@ export default function Signup() {
         try {
         const newUser = { email, password, passwordCheck, name };
         await Axios.post(
-            "http://localhost:3001/users/register",
+            "/api/user/register",
             newUser
         );
-        const loginRes = await Axios.post("http://localhost:3001/users/login", {
+        const loginRes = await Axios.post("api/user/login", {
         email,
         password,
         });

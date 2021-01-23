@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes here
 app.use(routes)
 
-//Connet to mongoose
+//Connect to mongoose
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/communityfitness";
 
 mongoose.connect(MONGODB_URI, {
@@ -33,9 +33,6 @@ mongoose.connect(MONGODB_URI, {
     console.log("MongoDB connection established");
   }
 );
-
-// setup routes
-app.use("/users", require("./routes/api/userroutes/user"));
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
