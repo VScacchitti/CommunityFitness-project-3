@@ -16,7 +16,7 @@
 
 ### Deployed
 
-For [webpage](https://lit-headland-55854.herokuapp.com/)
+For [webpage](https://lit-headland-55854.herokuapp.com/) </br>
 For [github](https://github.com/VScacchitti/CommunityFitness-project-3)
 
 
