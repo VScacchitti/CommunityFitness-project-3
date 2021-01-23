@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require ("mongoose");
+const cors = require("cors");
 const routes= require ("./routes");
-
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -9,6 +10,7 @@ const app = express();
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -18,14 +20,21 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes here
 app.use(routes)
 
-//Connet to mongoose
+//Connect to mongoose
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/communityfitness";
 
 mongoose.connect(MONGODB_URI, {
   useUnifiedTopology: true,
-  useNewUrlParser: true
-});
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  }, 
+  (err) => {
+    if (err) throw err;
+    console.log("MongoDB connection established");
+  }
+);
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AuthOptions from '../components/auth/AuthOptions';
 
 function Header() {
   return (
@@ -11,6 +12,7 @@ function Header() {
           <i className="fas fa-home"></i>
           </button>
         </Link>
+        <AuthOptions />
       </nav>
     </header>
   );
